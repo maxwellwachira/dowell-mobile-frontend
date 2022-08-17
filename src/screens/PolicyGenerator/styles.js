@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+    calendarPosition: {
+        position: 'absolute',
+        right: 20,
+        top: -45,
+        elevation: 3
+    },
     center: {
         alignItems: "center"
     },

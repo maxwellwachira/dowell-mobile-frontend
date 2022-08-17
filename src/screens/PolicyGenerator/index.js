@@ -5,17 +5,22 @@ import RadioGroup from 'react-native-radio-buttons-group';
 import { ModalDatePicker } from "react-native-material-date-picker";
 //Styling
 import { styles } from "./styles";
-// Chevron Up and Down Icons
-import ChevronUp from '../../assets/angle-up-solid.svg';
-import ChevronDown from '../../assets/chevron-down-solid.svg';
+// Chevron Up and Down Icons, Calendar Icon
+import ChevronUp from '../../../assets/angle-up-solid.svg';
+import ChevronDown from '../../../assets/chevron-down-solid.svg';
+import CalendarIcon  from '../../../assets/calendar-regular.svg';
 //Radio Buttons Data 
 import { radioButtonsData } from './radioButtonsData';
 
 
 const PolicyGenerator = () => {
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState();
     const [show, setShow] = useState(false);
     const [radioButtons, setRadioButtons] = useState(radioButtonsData)
+
+    const onDateChange = (selectedDate) => {
+        setDate(selectedDate);
+    }
 
     const onPressRadioButton = (radioButtonsArray) => {
         setRadioButtons(radioButtonsArray);
@@ -26,26 +31,28 @@ const PolicyGenerator = () => {
    
     return (
         <ScrollView style={styles.wrapper} showsVerticalScrollIndicator={false}>
-            <View>
+            <View style={{position: 'relative', marginTop: 30}}>
                 <Text>Date of execution of Document</Text>
                 <TextInput
                     style={styles.input}
-                     onFocus={onFocus}
-                     value={date}                   
-                />
-                {
-                    show && (
-                       
-                        <ModalDatePicker 
-                            button={<Text> Open </Text>} 
-                            color= "#489503"
-                            onSelect={(date) => console.log(date) }
-                            isHideOnSelect={true}
-                            initialDate={new Date()}
+                    onFocus={onFocus}
+                    value={date} 
+                    placeholder = "dd/mm/yyyy"                  
+                />               
+                <ModalDatePicker 
+                    button={<View style={styles.calendarPosition} onPress={onFocus}>
+                        <CalendarIcon
+                             width = {20}
+                             height = {25}
+                        />
+                    </View>
+                    } 
+                    color= "#489503"
+                    onSelect={(date) => console.log(date) }
+                    isHideOnSelect={true}
+                    initialDate={new Date()}
 
-                        />        
-                    )
-                }
+                />        
             </View>
             <View>
                 <Text>Party Details:</Text>
