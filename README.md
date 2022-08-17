@@ -9,7 +9,6 @@ Implementing UI using React Native.<br>
 # Table of contents
 
 - [Prerequisites](#Prerequisites)
-- [Directory Structure](#Directory-Structure)
 - [Running Locally](#Setting-up-Local-Environment)
 - [Acknowledgement](#Acknowledgement)
 - [License](#License)
@@ -17,28 +16,6 @@ Implementing UI using React Native.<br>
 # Prerequisites
 
 - [Node JS Installed ](https://nodejs.org/en/download/)
-
-# Directory-Structure
-
-    vehicle-shifter-frontend
-    ├── public
-    |   ├── index.html
-    |	└── favicon.ico
-    ├── src
-    |   ├── components/
-    |   ├── context/
-    |   ├── hooks/
-    |   ├── images/
-    |   ├── pages/
-    |   ├── services/
-    |   ├── API.js
-    |   ├── App.js
-    |   ├── GlobalStyles.js
-    |   └── index.js
-    ├── .gitignore
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
 
 # Setting-up-Local-Environment
 
@@ -55,8 +32,8 @@ yarn global add expo-cli
 clone the repository and navigate to the project directory
 
 ```bash
-git clone https://github.com/maxwellwachira/vehicle-shifter-frontend.git
-cd vehicle-shifter-frontend/
+git clone https://github.com/maxwellwachira/dowell-mobile-frontend.git
+cd dowell-mobile-frontend/
 ```
 
 ### Step 3
